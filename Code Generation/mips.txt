@@ -1,0 +1,419 @@
+.data
+	__str__new__line__: .asciiz "\n"
+	a__GLOBAL_ARRAY__: .word 0 1 2 3 4 5 6 7 8 9 
+	__str__0: .asciiz ", "
+	__str__1: .asciiz ", "
+	__str__2: .asciiz ", "
+.text
+	li $t0, 2
+	sw $t0, -4($sp)
+	li $t0, 5
+	sw $t0, -8($sp)
+	li $v0, 5
+	syscall
+	sw $v0, -12($sp)
+	lw $t0, -12($sp)
+	sw $t0, -4($sp)
+	li $v0, 5
+	syscall
+	sw $v0, -16($sp)
+	lw $t0, -16($sp)
+	sw $t0, -8($sp)
+	lw $t1, -4($sp)
+	lw $t2, -8($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -20($sp)
+	lw $t1, -20($sp)
+	li $t2, 0
+	subu $t0, $t2, $t1
+	sw $t0, -24($sp)
+	sw $ra, -28($sp)
+	li $a0, 4
+	addiu $sp, $sp, -32
+	jal fib
+	addiu $sp, $sp, 32
+	lw $ra, -28($sp)
+	sw $v0, -28($sp)
+	lw $t1, -24($sp)
+	lw $t2, -28($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -32($sp)
+	lw $t1, -32($sp)
+	addiu $t0, $t1, 0
+	sw $t0, -36($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 4
+	sw $t0, -40($sp)
+	lw $t1, -40($sp)
+	lw $t0, 0($t1)
+	sw $t0, -44($sp)
+	lw $t1, -44($sp)
+	sll $t0, $t1, 0
+	sw $t0, -48($sp)
+	lw $t1, -36($sp)
+	lw $t2, -48($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -52($sp)
+	lw $t1, -52($sp)
+	addiu $t0, $t1, 0
+	sw $t0, -56($sp)
+	lw $t1, -56($sp)
+	sll $t0, $t1, 2
+	addu $t0, $t0, $t1
+	sw $t0, -60($sp)
+	lw $t0, -60($sp)
+	sw $t0, -4($sp)
+	sw $ra, -64($sp)
+	li $a0, 5
+	addiu $sp, $sp, -68
+	jal fib
+	addiu $sp, $sp, 68
+	lw $ra, -64($sp)
+	sw $v0, -64($sp)
+	lw $t1, -64($sp)
+	addiu $t0, $t1, 2
+	sw $t0, -68($sp)
+	sw $ra, -72($sp)
+	lw $a0, -68($sp)
+	addiu $sp, $sp, -76
+	jal fib
+	addiu $sp, $sp, 76
+	lw $ra, -72($sp)
+	sw $v0, -72($sp)
+	lw $t1, -72($sp)
+	li $t2, 1197
+	subu $t0, $t2, $t1
+	sw $t0, -76($sp)
+	lw $t1, -76($sp)
+	addiu $t0, $t1, -10091
+	sw $t0, -80($sp)
+	lw $t0, -80($sp)
+	sw $t0, -8($sp)
+	li $t0, -6
+	sw $t0, -84($sp)
+main_b1:
+	lw $t1, -4($sp)
+	slti $t0, $t1, 100
+	sw $t0, -88($sp)
+	lw $t1, -88($sp)
+	addiu $t0, $t1, 0
+	sltu $t0, $zero, $t0
+	beq $t0, $zero, main_b4
+	j main_b3
+main_b2:
+	lw $t1, -4($sp)
+	addiu $t0, $t1, 1
+	sw $t0, -92($sp)
+	lw $t0, -92($sp)
+	sw $t0, -4($sp)
+	j main_b1
+main_b3:
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 0
+	sw $t0, -96($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 0
+	sw $t0, -100($sp)
+	lw $t1, -100($sp)
+	lw $t0, 0($t1)
+	sw $t0, -104($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -108($sp)
+	lw $t1, -104($sp)
+	lw $t2, -108($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -112($sp)
+	lw $t0, -112($sp)
+	lw $t1, -96($sp)
+	sw $t0, 0($t1)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 4
+	sw $t0, -116($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 4
+	sw $t0, -120($sp)
+	lw $t1, -120($sp)
+	lw $t0, 0($t1)
+	sw $t0, -124($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -128($sp)
+	lw $t1, -124($sp)
+	lw $t2, -128($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -132($sp)
+	lw $t0, -132($sp)
+	lw $t1, -116($sp)
+	sw $t0, 0($t1)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 8
+	sw $t0, -136($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 8
+	sw $t0, -140($sp)
+	lw $t1, -140($sp)
+	lw $t0, 0($t1)
+	sw $t0, -144($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -148($sp)
+	lw $t1, -144($sp)
+	lw $t2, -148($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -152($sp)
+	lw $t0, -152($sp)
+	lw $t1, -136($sp)
+	sw $t0, 0($t1)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 12
+	sw $t0, -156($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 12
+	sw $t0, -160($sp)
+	lw $t1, -160($sp)
+	lw $t0, 0($t1)
+	sw $t0, -164($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -168($sp)
+	lw $t1, -164($sp)
+	lw $t2, -168($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -172($sp)
+	lw $t0, -172($sp)
+	lw $t1, -156($sp)
+	sw $t0, 0($t1)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 16
+	sw $t0, -176($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 16
+	sw $t0, -180($sp)
+	lw $t1, -180($sp)
+	lw $t0, 0($t1)
+	sw $t0, -184($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -188($sp)
+	lw $t1, -184($sp)
+	lw $t2, -188($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -192($sp)
+	lw $t0, -192($sp)
+	lw $t1, -176($sp)
+	sw $t0, 0($t1)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 20
+	sw $t0, -196($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 20
+	sw $t0, -200($sp)
+	lw $t1, -200($sp)
+	lw $t0, 0($t1)
+	sw $t0, -204($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -208($sp)
+	lw $t1, -204($sp)
+	lw $t2, -208($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -212($sp)
+	lw $t0, -212($sp)
+	lw $t1, -196($sp)
+	sw $t0, 0($t1)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 24
+	sw $t0, -216($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 24
+	sw $t0, -220($sp)
+	lw $t1, -220($sp)
+	lw $t0, 0($t1)
+	sw $t0, -224($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -228($sp)
+	lw $t1, -224($sp)
+	lw $t2, -228($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -232($sp)
+	lw $t0, -232($sp)
+	lw $t1, -216($sp)
+	sw $t0, 0($t1)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 28
+	sw $t0, -236($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 28
+	sw $t0, -240($sp)
+	lw $t1, -240($sp)
+	lw $t0, 0($t1)
+	sw $t0, -244($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -248($sp)
+	lw $t1, -244($sp)
+	lw $t2, -248($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -252($sp)
+	lw $t0, -252($sp)
+	lw $t1, -236($sp)
+	sw $t0, 0($t1)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 32
+	sw $t0, -256($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 32
+	sw $t0, -260($sp)
+	lw $t1, -260($sp)
+	lw $t0, 0($t1)
+	sw $t0, -264($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -268($sp)
+	lw $t1, -264($sp)
+	lw $t2, -268($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -272($sp)
+	lw $t0, -272($sp)
+	lw $t1, -256($sp)
+	sw $t0, 0($t1)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 36
+	sw $t0, -276($sp)
+	la $t1, a__GLOBAL_ARRAY__
+	addiu $t0, $t1, 36
+	sw $t0, -280($sp)
+	lw $t1, -280($sp)
+	lw $t0, 0($t1)
+	sw $t0, -284($sp)
+	lw $t1, -84($sp)
+	lw $t2, -84($sp)
+	mul $t0, $t1, $t2
+	sw $t0, -288($sp)
+	lw $t1, -284($sp)
+	lw $t2, -288($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -292($sp)
+	lw $t0, -292($sp)
+	lw $t1, -276($sp)
+	sw $t0, 0($t1)
+	j main_b2
+main_b4:
+	li $t0, 0
+	sw $t0, -4($sp)
+main_b5:
+	lw $t1, -4($sp)
+	slti $t0, $t1, 10
+	sw $t0, -296($sp)
+	lw $t1, -296($sp)
+	addiu $t0, $t1, 0
+	sltu $t0, $zero, $t0
+	beq $t0, $zero, main_b7
+main_b6:
+	la $t1, a__GLOBAL_ARRAY__
+	lw $t2, -4($sp)
+	sll $t3, $t2, 2
+	addu $t0, $t1, $t3
+	sw $t0, -300($sp)
+	lw $t1, -300($sp)
+	lw $t0, 0($t1)
+	sw $t0, -304($sp)
+	lw $a0, -304($sp)
+	li $v0, 1
+	syscall
+	la $a0, __str__0
+	li $v0, 4
+	syscall
+	lw $t1, -4($sp)
+	addiu $t0, $t1, 1
+	sw $t0, -308($sp)
+	lw $t0, -308($sp)
+	sw $t0, -4($sp)
+	j main_b5
+main_b7:
+	la $a0, __str__new__line__
+	li $v0, 4
+	syscall
+	lw $a0, -4($sp)
+	li $v0, 1
+	syscall
+	la $a0, __str__1
+	li $v0, 4
+	syscall
+	lw $a0, -8($sp)
+	li $v0, 1
+	syscall
+	la $a0, __str__2
+	li $v0, 4
+	syscall
+	lw $a0, -84($sp)
+	li $v0, 1
+	syscall
+	la $a0, __str__new__line__
+	li $v0, 4
+	syscall
+	li $v0, 10
+	syscall
+fib:
+	sw $a0, -4($sp)
+	lw $t1, -4($sp)
+	addiu $t0, $t1, -1
+	sltiu $t0, $t0, 1
+	sw $t0, -8($sp)
+	lw $t1, -8($sp)
+	addiu $t0, $t1, 0
+	sltu $t0, $zero, $t0
+	beq $t0, $zero, fib_b2
+fib_b1:
+	li $v0, 1
+	jr $ra
+fib_b2:
+	lw $t1, -4($sp)
+	addiu $t0, $t1, -2
+	sltiu $t0, $t0, 1
+	sw $t0, -12($sp)
+	lw $t1, -12($sp)
+	addiu $t0, $t1, 0
+	sltu $t0, $zero, $t0
+	beq $t0, $zero, fib_b4
+fib_b3:
+	li $v0, 2
+	jr $ra
+fib_b4:
+	lw $t1, -4($sp)
+	addiu $t0, $t1, -1
+	sw $t0, -16($sp)
+	sw $ra, -20($sp)
+	lw $a0, -16($sp)
+	addiu $sp, $sp, -24
+	jal fib
+	addiu $sp, $sp, 24
+	lw $ra, -20($sp)
+	sw $v0, -20($sp)
+	lw $t1, -4($sp)
+	addiu $t0, $t1, -2
+	sw $t0, -24($sp)
+	sw $ra, -28($sp)
+	lw $a0, -24($sp)
+	addiu $sp, $sp, -32
+	jal fib
+	addiu $sp, $sp, 32
+	lw $ra, -28($sp)
+	sw $v0, -28($sp)
+	lw $t1, -20($sp)
+	lw $t2, -28($sp)
+	addu $t0, $t1, $t2
+	sw $t0, -32($sp)
+	lw $v0, -32($sp)
+	jr $ra
